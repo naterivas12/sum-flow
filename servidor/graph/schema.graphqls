@@ -1,0 +1,26 @@
+type Suma{
+  id:Int!
+  nombre: String!
+  sum1:Int!
+  sum2:Int!
+  result:Int!
+}
+
+type Query{
+  sumas:[Suma!]!
+}
+
+input SumInput {
+  nombre: String!
+  sum1:Int!
+  sum2:Int!
+  result:Int!
+  
+}
+
+type Mutation{
+  createSuma(input:SumInput!):Suma!
+  updateSuma(sumaId:Int!,input:SumInput!):Suma!
+  deleteSuma(sumaId: Int!): Boolean!
+}
+
